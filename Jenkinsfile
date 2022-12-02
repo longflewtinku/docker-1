@@ -9,8 +9,8 @@ pipeline {
         }    
         stage('Example Build') {
             steps {
-                sh 'terraform init',
-                   'terraform apply -var-file="dev.tfvars" -auto-approve'   
+                sh """terraform init
+                      terraform apply -var-file="dev.tfvars" -auto-approve"""   
             }
         }
     }
