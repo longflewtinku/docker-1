@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'UBUNTU' }
+    agent { label 'OPENJDK-11-JDK' }
     stages {
         stage('learning') {
             steps {
