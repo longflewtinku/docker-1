@@ -25,5 +25,5 @@ variable "web-trigger" {
 variable "ami-id" {
     type = string
     description = "Ami id of ubuntu 20.04"
-    default = "ami-024c319d5d14b463e"
+    default = "ami-03d3eec31be6ef6f9"
 }
