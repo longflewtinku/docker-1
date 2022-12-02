@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'UBUNTU' }
+    agent { label 'OPENJDK-11-JDK' }
     stages {
         stage('learning') {
             steps {
@@ -9,8 +9,8 @@ pipeline {
         }    
         stage('Example Build') {
             steps {
-                sh 'terraform init',
-                   'terraform apply -var-file="dev.tfvars" -auto-approve'   
+                sh """terraform init
+                      terraform apply -var-file="dev.tfvars" -auto-approve"""   
             }
         }
     }
