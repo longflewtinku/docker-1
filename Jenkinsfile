@@ -9,7 +9,8 @@ pipeline {
         }    
         stage('Example Build') {
             steps {
-                sh 'docker image build -t one:1.0 .'   
+                sh 'terraform init',
+                   'terraform apply -var-file="dev.tfvars" -auto-approve'   
             }
         }
     }
