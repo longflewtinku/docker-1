@@ -1,0 +1,6 @@
+region = "ap-south-1"
+vpc-name = "my_vpc"
+vpc-range = "10.0.0.0/16"
+public-cidrs = [ "10.0.0.0/24","10.0.1.0/24","10.0.2.0/24","10.0.3.0/24" ]
+private-cidrs = [ "10.0.4.0/24","10.0.5.0/24" ]
+web-trigger = 1.0
