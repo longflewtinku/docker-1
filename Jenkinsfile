@@ -9,7 +9,7 @@ pipeline {
         }    
         stage('Example Build') {
             steps {
-                sh 'docker info'   
+                sh 'docker image build -t one:1.0 .'   
             }
         }
     }
