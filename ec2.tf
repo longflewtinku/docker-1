@@ -15,10 +15,6 @@ resource "aws_instance" "webec2" {
     ]
 
 }
-resource "null_resource" "webprovisoner" {
-  triggers = {
-    running_number = var.web-trigger
-  }
   provisioner "remote-exec" {
 
       connection {
