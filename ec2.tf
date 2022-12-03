@@ -8,33 +8,24 @@ resource "aws_instance" "webec2" {
     tags = {
       "Name" = "web"
     }
-
     depends_on = [
       module.vpc,
       aws_security_group.web_sg
     ]
 
-}
-resource "null_resource" "webprovisoner" {
-  triggers = {
-    running_number = var.web-trigger
-  }
-  provisioner "remote-exec" {
+    provisioner "remote-exec" {
 
-      connection {
+    connection {
         type = "ssh"
         user = "ubuntu"
         private_key = file("~/.ssh/id_rsa")
         host = aws_instance.webec2.public_ip 
-      }
-      inline = [
-                "docker info"
-      ]
-      
-
     }
-    depends_on = [ 
-      aws_instance.webec2 ]
-
+    inline = [
+        "docker info"
+    ]
+      
+  }
 }
+
  
