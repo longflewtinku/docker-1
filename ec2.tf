@@ -13,8 +13,6 @@ resource "aws_instance" "webec2" {
       aws_security_group.web_sg
     ]
     provisioner "remote-exec" {
-}
-  provisioner "remote-exec" {
 
     connection {
         type = "ssh"
