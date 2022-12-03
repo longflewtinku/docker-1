@@ -12,8 +12,9 @@ resource "aws_instance" "webec2" {
       module.vpc,
       aws_security_group.web_sg
     ]
-
     provisioner "remote-exec" {
+}
+  provisioner "remote-exec" {
 
     connection {
         type = "ssh"
@@ -27,5 +28,3 @@ resource "aws_instance" "webec2" {
       
   }
 }
-
- 

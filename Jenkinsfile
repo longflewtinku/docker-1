@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'OPENJDK-11-JDK' }
+    agent { label 'OPEN' }
     stages {
         stage('learning') {
             steps {
