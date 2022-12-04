@@ -18,9 +18,15 @@ resource "aws_instance" "webec2" {
         type = "ssh"
         user = "ubuntu"
         private_key = file("/home/ubuntu/id_rsa")
-        host = "65.2.149.192"
+        host = "aws_intance.public_ip"
     }
     inline = [
+        "curl -fsSL https://get.docker.com -o get-docker.sh",
+        "sh get-docker.sh",
+        "sudo systemlctl start docker",
+        "sudo systemctl enable docker",
+        "sudo usermod -aG docker ubuntu",
+        "sudo systemctl restart docker",
         "docker info"
     ]
       
