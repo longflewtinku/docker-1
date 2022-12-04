@@ -18,7 +18,7 @@ resource "aws_instance" "webec2" {
         type = "ssh"
         user = "ubuntu"
         private_key = file("/home/ubuntu/id_rsa")
-        host = aws_instance.webec2.public_ip 
+        host = "65.2.149.192"
     }
     inline = [
         "docker info"
