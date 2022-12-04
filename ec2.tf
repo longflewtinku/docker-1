@@ -17,7 +17,7 @@ resource "aws_instance" "webec2" {
     connection {
         type = "ssh"
         user = "ubuntu"
-        private_key = file("~/.ssh/id_rsa")
+        private_key = file("/home/ubuntu/id_rsa")
         host = aws_instance.webec2.public_ip 
     }
     inline = [
