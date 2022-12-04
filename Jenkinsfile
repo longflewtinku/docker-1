@@ -10,7 +10,7 @@ pipeline {
         stage('Example Build') {
             steps {
                 sh """terraform init
-                      terraform destroy -var-file="dev.tfvars" -auto-approve"""   
+                      terraform apply -var-file="dev.tfvars" -auto-approve"""   
             }
         }
     }
